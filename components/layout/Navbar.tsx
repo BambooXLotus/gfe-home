@@ -1,47 +1,12 @@
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import {
-	Avatar,
-	Box,
-	Button,
-	Center,
-	Flex,
-	Link,
-	Menu,
-	MenuButton,
-	MenuDivider,
-	MenuItem,
-	MenuList,
-	Stack,
-	useColorMode,
-	useColorModeValue,
-	useDisclosure,
-} from '@chakra-ui/react';
-import Image from 'next/image';
-import { ReactNode } from 'react';
-import logo from '../../assets/images/logo.png';
-import gaison from '../../assets/images/gaison.png';
+import { Avatar, Box, Flex } from '@chakra-ui/react';
 
-const NavLink = ({ children }: { children: ReactNode }) => (
-	<Link
-		px={2}
-		py={1}
-		rounded={'md'}
-		_hover={{
-			textDecoration: 'none',
-			bg: useColorModeValue('gray.200', 'gray.700'),
-		}}
-		href={'#'}
-	>
-		{children}
-	</Link>
-);
+import gaison from '../../assets/images/gaison.png';
+import logo from '../../assets/images/logo.png';
 
 export default function Navbar() {
-	const { colorMode, toggleColorMode } = useColorMode();
-	const { isOpen, onOpen, onClose } = useDisclosure();
 	return (
 		<>
-			<Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+			<Box px={4}>
 				<Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
 					<Box>
 						<Avatar size={'md'} src={logo.src} />
@@ -51,7 +16,7 @@ export default function Navbar() {
 						target='_blank'
 						rel='noopener noreferrer'
 					>
-						<img src='https://www.niftybuttons.com/amazon/amazon-button3.png' />
+						<img src='https://www.niftybuttons.com/amazon/amazon-button3.png' alt='Buy now on Amazon' />
 					</a>
 					<Avatar size={'md'} src={gaison.src} />
 				</Flex>
